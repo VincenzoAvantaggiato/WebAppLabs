@@ -31,7 +31,7 @@ function FilmInList(props) {
             <Col xs={6} xl={3} className="text-end text-xl-center">
             <span className="custom-control custom-checkbox">
               <span className="custom-control custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" defaultChecked={filmData.favorite}/>
+                          <input type="checkbox" className="custom-control-input" checked={filmData.favorite} disabled/>
                           <label className="custom-control-label">Favorite</label>
                         </span>
             </span>

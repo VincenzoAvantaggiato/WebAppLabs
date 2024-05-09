@@ -58,14 +58,14 @@ function App() {
     const addFilm = (film) => {
         setFilms((old_films)=>{
             const id = Math.max(...old_films.map(f=>f.id))+1;
-            const newFilm = new Film(id,film.title,false,film.date,film.rating);
+            const newFilm = new Film(id,film.title,film.favorite,film.date,film.rating);
             return [...old_films, newFilm]
         });
     }
 
     const updateFilm = (film) => {
         setFilms(old_films=>old_films.map( f =>{
-            if (f.id==film.id) return new Film(f.id,film.title,f.favorite,film.date,film.rating);
+            if (f.id==film.id) return new Film(f.id,film.title,film.favorite,film.date,film.rating);
             else return f;
         }
         ))
