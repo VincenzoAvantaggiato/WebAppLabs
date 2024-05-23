@@ -3,10 +3,16 @@ import morgan from 'morgan';
 import {check, validationResult} from 'express-validator';
 import { getFilm, removeFilm, retrieveFavoriteFilms, retrieveFilms, retrieveFilmsAfterDate, retrieveFilmsRatingGE, retrieveUnseenFilms, storeFilm, updateFavorite, updateFilm, updateRating } from './DAO.mjs';
 import dayjs from 'dayjs';
+import cors from 'cors';
 
 const app = express();
 const port = 3001;
 
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    optionsSuccessStatus: 200
+  };
+app.use(cors(corsOptions))
 app.use(json());
 app.use(morgan('dev'));
 
